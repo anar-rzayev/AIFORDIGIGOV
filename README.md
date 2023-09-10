@@ -1,6 +1,6 @@
-# AI4DIGIGOV - Xidmətdən imtinanın proqnozlaşdırılması 🌐
+# AI4DIGIGOV - Xidmətdən imtinanın proqnozlaşdırılması
 
-Welcome to our project repository for the ASAN Service Community Prediction Competition. 
+Welcome to our project repository for the ASAN Service Community Prediction Competition. 🌐
 
 ## Competition Overview 🏆
 
