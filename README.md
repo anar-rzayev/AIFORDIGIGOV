@@ -5,6 +5,7 @@ Welcome to our project repository for the ASAN Service Community Prediction Comp
 ## Competition Overview 🏆
 
 Növbə tutan vətəndaşın növbədən imtina etmə ehtimalını proqnozlaşdıra bilərsinizmi?
+
 The competition tasked participants with predicting service cancellation instances during the first three months of 2020, leveraging historical data from 2018 and 2019. Find more about the competition [here](https://www.kaggle.com/competitions/ai4digigov2021/data).
 
 ## Repository Structure 🗂️
