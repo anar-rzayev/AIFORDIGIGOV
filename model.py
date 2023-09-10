@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from datetime import date
 
-
 from sklearn.metrics import roc_curve
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import auc
@@ -14,14 +13,14 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import DecisionTreeClassifier
 
-# data files
+# dataset files
 sample_file = "../data/queue_dataset_train_small_sample.csv"
 train_file = "../data/queue_dataset_train.csv"
 test_file = "../data/queue_dataset_test.csv"
 baseline_res = "../data/baseline_submission.csv"
 
 
-# read train sample
+# read train & test samples
 sample_data = pd.read_csv(sample_file)
 train_data = pd.read_csv(train_file)
 test_data = pd.read_csv(test_file)
@@ -169,7 +168,7 @@ def remove_unused_cols(sample_data):
     # sample_data.drop(['previous_customer_count'], axis=1, inplace=True)
     sample_data.drop(['service_name_organization'], axis=1, inplace=True)
     return sample_data
-                                                 
+          
                                                  
 print("Starting Preprocessing")
 train_data = train_data.dropna()
@@ -184,7 +183,6 @@ train_data = categorize_dates(train_data)
 train_data = categorize_ages(train_data)
 train_data = categorize_queue(train_data)
 train_data = remove_unused_cols(train_data)
-
 
 test_data = test_data.dropna()
 # test_data = restore_age(test_data)
@@ -207,7 +205,6 @@ X_train = train_data.drop(['service_canceled', "id"], axis=1)
 Y_train = train_data["service_canceled"]
 X_test = test_data.drop(["id"], axis=1)
 
-
 # Select algorithms, Use the algorithm you want to use as classifier
 classifier = RandomForestClassifier(n_estimators = 100, n_jobs=-1,
                                     verbose=1, random_state = 42)
@@ -217,14 +214,12 @@ classifier.fit(X_train, Y_train)
 accuracy = classifier.score(X_train, Y_train) * 100
 Y_train_pred = classifier.predict_proba(X_train)[:, 1]
 
-
 FPR, TPR, thresholds = roc_curve(Y_train, Y_train_pred)
 AUC = roc_auc_score(Y_train, Y_train_pred)
 
 # plt.plot(FPR, TPR)
 print("Accuracy: ", "{0:.2f}".format(accuracy))
 print("Area Under the Curve: ", "{0:.2f}".format(AUC))
-
 
 print("\n-------------------------")
 print("Starting Predictions")
