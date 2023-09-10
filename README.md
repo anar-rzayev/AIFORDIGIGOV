@@ -10,11 +10,10 @@ The competition tasked participants with predicting service cancellation instanc
 
 ## Repository Structure 🗂️
 
-- `README.md` – You're reading it! Here you will find details about the project and setup instructions.
 - `data_vis.ipynb` – Jupyter notebook used for exploratory data analysis and visualization of the datasets.
 - `model.py` – Script where the predictive model is defined and trained using the historical data.
 - `requirements.txt` – A list of Python packages necessary to run the scripts.
-- `submission.csv` – The file used to submit my predictions in the competition.
+- `submission.csv` – The file used to submit our predictions in the competition.
 - `data/` – Folder containing all the datasets required for the project.
 
 ## Getting Started 🚀
@@ -35,7 +34,7 @@ Ensure you have Python 3.8+ and Jupyter Notebook installed on your system. You c
 
 ### Usage 🖥️
 
-1. Explore `data_vis.ipynb` for data analysis and visualizations, aiding in understanding the datasets in depth.
+1. Explore `data_vis.ipynb` for data analysis and visualizations, helping to understand the datasets in depth.
 2. Run `model.py` to train the predictive model using the historical data. This script will also generate predictions saved in `submission.csv`.
 
 ### Datasets 📁
